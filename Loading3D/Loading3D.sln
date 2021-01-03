@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Loading3D", "Loading3D.njsproj", "{4F68E03C-606C-4313-A65C-49602E4AEE09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F68E03C-606C-4313-A65C-49602E4AEE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F68E03C-606C-4313-A65C-49602E4AEE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F68E03C-606C-4313-A65C-49602E4AEE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F68E03C-606C-4313-A65C-49602E4AEE09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F739330-886E-4C03-84BC-80D69DD95F98}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+C:\Users\jscastro\source\repos\TEMP\Loading3D\obj\Debug\Loading3D.njsproj.CoreCompileInputs.cache
+C:\Users\jscastro\source\repos\TEMP\Loading3D\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\jscastro\source\repos\TEMP\Loading3D\obj\Debug\Loading3D.njsprojAssemblyReference.cache
+C:\Users\jscastro\source\repos\TEMP2\Loading3D\obj\Debug\Loading3D.njsprojAssemblyReference.cache
+C:\Users\jscastro\source\repos\TEMP2\Loading3D\obj\Debug\Loading3D.njsproj.CoreCompileInputs.cache
+C:\Users\jscastro\source\repos\TEMP2\Loading3D\bin\Microsoft.NodejsTools.WebRole.dll
