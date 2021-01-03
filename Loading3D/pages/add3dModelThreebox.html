@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Add a 3D model</title>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+	<script src="../scripts/threebox.min.js"></script>
+	<link href="../styles/threebox.css" rel="stylesheet" />
+	<style>
+		body, html {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+
+	</style>
+</head>
+<body>
+    <div id='map' class='map'></div>
+
+    <script>
+
+		mapboxgl.accessToken = 'pk.eyJ1IjoianNjYXN0cm8iLCJhIjoiY2s2YzB6Z25kMDVhejNrbXNpcmtjNGtpbiJ9.28ynPf1Y5Q8EyB_moOHylw';
+
+		var map = (window.map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11',
+			zoom: 16,
+			center: [-8.629134, 41.157902],
+			pitch: 60,
+			antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
+		}));
+
+		// parameters to ensure the model is georeferenced correctly on the map
+		var modelOrigin = [-8.629134, 41.157902, 0];
+
+		function createCustomLayer(layerName, origin) {
+			let model;
+			//create the layer
+			let customLayer3D = {
+				id: layerName,
+				type: 'custom',
+				renderingMode: '3d',
+				onAdd: function (map, gl) {
+
+					// instantiate threebox
+					window.tb = new Threebox(
+						map,
+						gl,
+						{ defaultLights: true, enableSelectingObjects: true, enableDraggingObjects: true, enableRotatingObjects: true, enableTooltips: true }
+					);
+
+					let options = { type: 'gltf', obj: '../3D/diorama/scene.gltf', units: 'meters', scale: 1, anchor: 'center', rotation: { x: 90, y: 0, z: 0 } }
+					tb.loadObj(options, function (model) {
+						model.setCoords(origin);
+						model.addTooltip("Your diorama model is loaded", true);
+						tb.add(model);
+					});
+
+				},
+				render: function (gl, matrix) {
+					tb.update();
+				}
+			};
+			return customLayer3D;
+
+		};
+
+		map.on('style.load', function () {
+			map.addLayer(createCustomLayer('3d-model', modelOrigin), 'waterway-label');
+		});
+
+    </script>
+</body>
+</html>
